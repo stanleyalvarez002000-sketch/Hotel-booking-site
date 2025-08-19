@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Hotel — Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Paradise Hotel</h1>
+      <nav class="nav">
+        <a href="#booking">Book Now</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#my-bookings">My Bookings</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h2>Your island escape awaits</h2>
+        <p>Comfort. Style. Ocean views. Book in minutes.</p>
+        <a class="btn" href="#booking">Start Booking</a>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <h2>Book Your Stay</h2>
+        <form id="bookingForm" novalidate>
+          <div class="grid">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe">
+              <small class="error" data-for="name"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com">
+              <small class="error" data-for="email"></small>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" placeholder="+1 555 123 4567">
+              <small class="error" data-for="phone"></small>
+            </div>
+
+            <div class="field">
+              <label for="room">Room Type</label>
+              <select id="room" name="room" required>
+                <option value="">Select a room</option>
+                <option>Standard</option>
+                <option>Deluxe</option>
+                <option>Ocean Suite</option>
+                <option>Penthouse</option>
+              </select>
+              <small class="error" data-for="room"></small>
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests</label>
+              <input id="guests" name="guests" type="number" min="1" max="8" required value="1">
+              <small class="error" data-for="guests"></small>
+            </div>
+
+            <div class="field">
+              <label for="checkin">Check‑in</label>
+              <input id="checkin" name="checkin" type="date" required>
+              <small class="error" data-for="checkin"></small>
+            </div>
+
+            <div class="field">
+              <label for="checkout">Check‑out</label>
+              <input id="checkout" name="checkout" type="date" required>
+              <small class="error" data-for="checkout"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="requests">Special Requests</label>
+            <textarea id="requests" name="requests" rows="3" placeholder="e.g., Late check-in, allergies..."></textarea>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" id="terms" required>
+            <span>I agree to the hotel’s terms & cancellation policy.</span>
+          </label>
+          <small class="error" data-for="terms"></small>
+
+          <button type="submit" class="btn">Confirm Booking</button>
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="rooms" class="rooms-section">
+      <div class="container">
+        <h2>Rooms</h2>
+        <div class="cards">
+          <article class="card"><h3>Standard</h3><p>Cozy room with garden view.</p></article>
+          <article class="card"><h3>Deluxe</h3><p>Spacious room with balcony.</p></article>
+          <article class="card"><h3>Ocean Suite</h3><p>Suite with panoramic ocean view.</p></article>
+          <article class="card"><h3>Penthouse</h3><p>Top-floor luxury with terrace.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="my-bookings" class="bookings-section">
+      <div class="container">
+        <h2>My Bookings (stored in your browser)</h2>
+        <div id="bookingsEmpty" class="muted">No bookings yet.</div>
+        <table id="bookingsTable" class="table" aria-describedby="bookingsHelp" hidden>
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Name</th>
+              <th>Room</th>
+              <th>Guests</th>
+              <th>Check‑in</th>
+              <th>Check‑out</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="bookingsHelp" class="muted">Data is saved with LocalStorage and never leaves your device.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <p>📍 Paradise Hotel, Beach Road, Maldives</p>
+      <p>📧 contact@paradisehotel.com &nbsp;|&nbsp; 📞 +1 (234) 567-890</p>
+      <p class="muted">Demo only — no server or payments connected.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
